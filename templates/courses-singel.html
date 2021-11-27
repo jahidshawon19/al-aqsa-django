@@ -1,0 +1,206 @@
+{% load static %}
+
+    <!--====== HEADER PART START ======-->
+    {% include 'header.html' %}
+    {% load crispy_forms_tags %}
+     <!--====== HEADER PART END ======-->
+   
+    <!--====== PAGE BANNER PART START ======-->
+    
+    <section id="page-banner" class="pt-105 pb-110 bg_cover" data-overlay="8" style="background-image: url(images/page-banner-2.jpg)">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-banner-cont">
+                        <h2>{{course.course_title}}</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item"><a href="#">Courses</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{{course.course_title}}</li>
+                            </ol>
+                        </nav>
+                    </div>  <!-- page banner cont -->
+                </div>
+            </div> <!-- row -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== PAGE BANNER PART ENDS ======-->
+    
+    <!--====== COURSES SINGEl PART START ======-->
+    
+    <section id="corses-singel" class="pt-90 pb-120 gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="corses-singel-left mt-30">
+                        <div class="title">
+                            <h3>{{course.course_title}}</h3>
+                        </div> <!-- title -->
+                        <div class="course-terms">
+                            <ul>
+          
+                     
+                    
+                                <li>
+                                    <div class="review">
+                                        <span>Review</span>
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                            <li class="rating">(20 Reviws)</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> <!-- course terms -->
+                        
+                        <div class="corses-singel-image pt-50">
+                            <video width="600" controls>
+                                <source src="{{course.video.url}}" type="video/mp4">
+                              </video>
+                        </div> <!-- corses singel image -->
+                        
+                        <div class="corses-tab mt-30">
+                            <ul class="nav nav-justified" id="myTab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="active" id="overview-tab" data-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="curriculam-tab" data-toggle="tab" href="#curriculam" role="tab" aria-controls="curriculam" aria-selected="false">Curriculam</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="instructor-tab" data-toggle="tab" href="#instructor" role="tab" aria-controls="instructor" aria-selected="false">Instructor</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a id="reviews-tab" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Reviews</a>
+                                </li>
+                            </ul>
+                            
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+                                    <div class="overview-description">
+                                        <div class="singel-description pt-40">
+                                            <h6>Course Summery</h6>
+                                            <p>{{course.overview}}</p>
+                                        </div>
+
+                                    </div> <!-- overview description -->
+                                </div>
+                                
+                                <div class="tab-pane fade" id="instructor" role="tabpanel" aria-labelledby="instructor-tab">
+                                    <div class="instructor-cont">
+                                        <div class="instructor-author">
+                                            <div class="author-thum">
+                                                <img src="{{course.instructor.photo.url}}" alt="Instructor" style="height: 100px; width: 100px;">
+                                            </div>
+                                            <div class="author-name">
+                                                <a href="#"><h5>{{course.instructor.name}}</h5></a>
+                                                
+                                                <ul class="social">
+                                                    <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="instructor-description pt-25">
+                                            <p>{{course.instructor.details}}</p>
+                                        </div>
+                                    </div> <!-- instructor cont -->
+                                </div>
+                                
+                            </div> <!-- tab content -->
+                        </div>
+                    </div> <!-- corses singel left -->
+                    
+                </div>
+                <div class="col-lg-4">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-6">
+                            <div class="course-features mt-30">
+                               <h4>Course Features </h4>
+                                <ul>
+                                    <li><i class="fa fa-clock-o"></i>Duaration : <span>{{course.durations}}</span></li>
+                                    <li><i class="fa fa-book"></i>Category : <span>{{course.category}}</span></li>
+                                    <li><i class="fa fa-user"></i>Instructor : <span>{{course.instructor.name}}</span></li>
+
+                                </ul>
+
+                            </div> <!-- course features -->
+                        </div>
+                        <div class="col-lg-12 col-md-6">
+
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- row -->
+
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="releted-courses pt-95">
+                        <div class="title">
+                            <h3>Releted Courses</h3>
+                        </div>
+                        <div class="row">
+
+                            {% for r in related_course %}
+
+                            <div class="col-md-6">
+                                <div class="singel-course mt-30">
+                                    <div class="thum">
+                                        <div class="image">
+                                            <img src="{{r.thumbnail_image.url}}" alt="Course">
+                                        </div>
+                                        <div class="price">
+                                            <span>Free</span>
+                                        </div>
+                                    </div>
+                                    <div class="cont">
+                                        <ul>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                            <li><i class="fa fa-star"></i></li>
+                                        </ul>
+                                        <span>(20 Reviws)</span>
+                                        <a href="{% url 'single-course' r.id %}"><h4>{{r.course_title}}</h4></a>
+                                        <div class="course-teacher">
+                                            <div class="thum">
+                                                <a href="#"><img src="{{r.instructor.photo.url}}" alt="teacher"></a>
+                                            </div>
+                                            <div class="name">
+                                                <a href="{% url 'tutor' name=r.instructor.name.username %}"><h6>{{r.instructor}}</h6></a>
+                                            </div>
+                                            <div class="admin">
+                                                <ul>
+                                                    <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
+                                                    <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!-- singel course -->
+                            </div>
+                            {% endfor %}
+                        </div> <!-- row -->
+                    </div> <!-- releted courses -->
+                </div>
+            </div> 
+
+
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== COURSES SINGEl PART ENDS ======-->
+
+    <!--====== FOOTER PART START ======-->
+    {% include 'footer.html' %}
+    <!--====== FOOTER PART ENDS ======-->
+  

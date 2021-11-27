@@ -1,0 +1,46 @@
+{% load static %}
+
+    <!--====== HEADER PART START ======-->
+    {% include 'header.html' %}
+     <!--====== HEADER PART END ======-->
+
+   
+    <!--====== LOGIN FORM PART START ======-->
+    
+    <section id="courses-part" class="pt-120 pb-120 gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <h3 class="text-center mt-2">Log In</h3>
+                    <form action="" method="POST">
+                        {% csrf_token %}
+
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">User Name</label>
+                          <input type="text" class="form-control" name="user"  id="exampleInputEmail1" aria-describedby="emailHelp" >
+
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleInputPassword1">Password</label>
+                          <input type="password" class="form-control" name="pass" id="exampleInputPassword1">
+                        </div>
+
+                        <button type="submit" class="btn btn-warning mt-2">Log In</button>
+                      </form>
+                </div>
+                <div class="col-lg-4"></div>
+            </div> 
+
+
+        </div>
+     <!-- container -->
+    </section>
+    
+    <!--====== LOGIN FORM  PART ENDS ======-->
+   
+    <!--====== FOOTER PART START ======-->
+    {% include 'footer.html' %}
+    <!--====== FOOTER PART ENDS ======-->
+   
+   

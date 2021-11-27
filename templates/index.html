@@ -1,0 +1,200 @@
+{% load static %}
+
+    <!--====== HEADER PART START ======-->
+    {% include 'header.html' %}
+     <!--====== HEADER PART END ======-->
+
+    <!--====== SLIDER PART START ======-->
+    {% include 'slider.html' %}
+    <!--====== SLIDER PART ENDS ======-->
+   
+    <!--====== CATEGORY PART START ======-->
+    
+    <section id="category-part">
+        <div class="container">
+            <div class="category pt-40 pb-80">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="category-text pt-40">
+                            <h2>Check the benefits of Al-Aqsa's Quran classroom plan.</h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 offset-lg-1 col-md-8 offset-md-2 col-sm-8 offset-sm-2 col-8 offset-2">
+                        <div class="row category-slied mt-40">
+                            <div class="col-lg-4">
+                                <a href="#">
+                                    <span class="singel-category text-center color-1">
+                                        <span class="icon">
+                                           
+                                            <h2 class="text-light">1020</h2>
+                                        </span>
+                                        <span class="cont">
+                                            <span>SESSIONS COMPLETED</span>
+                                        </span>
+                                    </span> <!-- singel category -->
+                                </a>
+                            </div>
+                            <div class="col-lg-4">
+                                <a href="#">
+                                    <span class="singel-category text-center color-2">
+                                        <span class="icon">
+                                          <h2 class="text-light">438</h2>
+                                        </span>
+                                        <span class="cont">
+                                            <span>REGISTERED STUDENTS</span>
+                                        </span>
+                                    </span> <!-- singel category -->
+                                </a>
+                            </div>
+                            <div class="col-lg-4">
+                                <a href="#">
+                                    <span class="singel-category text-center color-3">
+                                        <span class="icon">
+                                           <h2 class="text-light">28</h2>
+                                        </span>
+                                        <span class="cont">
+                                            <span>TUTORS AVAILABLE</span>
+                                        </span>
+                                    </span> <!-- singel category -->
+                                </a>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <a href="#">
+                                    <span class="singel-category text-center color-1">
+                                        <span class="icon">
+                                           
+                                            <h2 class="text-light">1020</h2>
+                                        </span>
+                                        <span class="cont">
+                                            <span>SESSIONS COMPLETED</span>
+                                        </span>
+                                    </span> <!-- singel category -->
+                                </a>
+                            </div>
+                            <div class="col-lg-4">
+                                <a href="#">
+                                    <span class="singel-category text-center color-2">
+                                        <span class="icon">
+                                          <h2 class="text-light">438</h2>
+                                        </span>
+                                        <span class="cont">
+                                            <span>REGISTERED STUDENTS</span>
+                                        </span>
+                                    </span> <!-- singel category -->
+                                </a>
+                            </div>
+                            <div class="col-lg-4">
+                                <a href="#">
+                                    <span class="singel-category text-center color-3">
+                                        <span class="icon">
+                                           <h2 class="text-light">28</h2>
+                                        </span>
+                                        <span class="cont">
+                                            <span>TUTORS AVAILABLE</span>
+                                        </span>
+                                    </span> <!-- singel category -->
+                                </a>
+                            </div>
+
+                        </div> <!-- category slied -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- category -->
+        </div> <!-- container -->
+    </section>
+    
+    <!--====== CATEGORY PART ENDS ======-->
+   
+
+
+   
+    <!--====== COURSE PART START ======-->
+    <section id="course-part" class="pt-115 pb-120 gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="section-title pb-45">
+                        <h5>Check the benefits of Al-Aqsa’s Quran classroom plan.</h5>
+                        <h2>Top Rated Courses</h2>
+                    </div> <!-- section title -->
+                </div>
+            </div> <!-- row -->
+            <div class="row course-slied mt-30">
+
+                {% for tc in top_rated_course %}
+                <div class="col-lg-4">
+                    <div class="singel-course">
+                        <div class="thum">
+                            <div class="image">
+                                <img src="{{tc.thumbnail_image.url}}" alt="Course">
+                            </div>
+                            <div class="price">
+                                <span>Free</span>
+                            </div>
+                        </div>
+                        <div class="cont">
+                            <ul>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                                <li><i class="fa fa-star"></i></li>
+                            </ul>
+                            <span>(20 Reviws)</span>
+                            <a href="{% url 'single-course' tc.id %}"><h4>{{tc.course_title}}</h4></a>
+                            <div class="course-teacher">
+                                <div class="thum">
+                                    <a href="{% url 'tutor' name=tc.instructor.name.username %}"><img src="{{tc.instructor.photo.url}}" alt="teacher"></a>
+                                </div>
+                                <div class="name">
+                                    <a href="{% url 'tutor' name=tc.instructor.name.username %}"><h6>{{tc.instructor.name}}</h6></a>
+                                </div>
+                                <div class="admin">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-user"></i><span>31</span></a></li>
+                                        <li><a href="#"><i class="fa fa-heart"></i><span>10</span></a></li>
+                                    </ul>
+                                    <a href="{% url 'single-course' tc.id %}" class="btn btn-danger btn-sm">Start Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- singel course -->
+                </div>
+                {% endfor %}
+  
+
+            </div> <!-- course slied -->
+    
+        </div> <!-- container -->
+    </section>
+    <!--====== COURSE PART ENDS ======-->
+
+
+
+
+
+   
+    <!--====== VIDEO FEATURE PART START ======-->
+    {% include 'why.html' %}  
+    <!--====== VIDEO FEATURE PART ENDS ======-->
+   
+    <!--====== TEACHERS PART START ======-->
+    {% include 'home_teacher.html' %}
+    <!--====== TEACHERS PART ENDS ======-->
+   
+
+   
+    <!--====== TEASTIMONIAL PART START ======-->
+    {% include 'testimonial.html'%}
+    <!--====== TEASTIMONIAL PART ENDS ======-->
+   
+
+   
+    <!--====== PATNAR LOGO PART START ======-->
+    {% include 'partner.html' %}
+    <!--====== PATNAR LOGO PART ENDS ======-->
+   
+    <!--====== FOOTER PART START ======-->
+  {% include 'footer.html' %}
+      <!--====== FOOTER PART END ======-->

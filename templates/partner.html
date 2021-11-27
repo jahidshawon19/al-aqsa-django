@@ -1,0 +1,16 @@
+{% load static %}
+<div id="patnar-logo" class="pt-40 pb-80 gray-bg">
+    <div class="container">
+        <div class="row patnar-slied">
+            {% for s in sponsorship %}
+            <div class="col-lg-12">
+                <div class="singel-patnar text-center mt-40">
+                    <img src="{{s.photo.url}}" alt="Logo" style="height: 120px; width: 120px;">
+                </div>
+            </div>
+            {% endfor %}
+  
+
+        </div> <!-- row -->
+    </div> <!-- container -->
+</div> 
