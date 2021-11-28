@@ -12,3 +12,7 @@
 
 ### Main Technology 
 - Django & Sqlite3 Database
+
+
+### Live Link 
+https://al-aqsa-app-heroku.herokuapp.com/
