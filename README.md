@@ -11,4 +11,4 @@
 - Course Searching 
 
 ### Main Technology 
-- Django & Sqlite3 
+- Django & Sqlite3 Database
